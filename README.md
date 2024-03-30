@@ -69,5 +69,4 @@ This linear complexity arises because as the size of the input list increases, t
 
 ## Testing
 
-You can find the study and testing of this automaton in the file <strong>automaton_test.pl</strong>, here are the results of it:
-![Automaton test](https://github.com/AngelFranciscoGarciaGuzman/Automaton/blob/28350c8fcbd638386159ff3c945d40764afa588b/automaton_test.pl)
+You can find the study and testing of this automaton in the file <strong>automaton_test.pl</strong> found in this repository.
