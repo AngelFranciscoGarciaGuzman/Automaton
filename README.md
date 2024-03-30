@@ -19,7 +19,53 @@ Considering that our language is:
 Σ = a,b,c
 we will implement the automaton using "q" states, the result implemented in a diagram looks like this:
 
-![Automata](https://github.com/AngelFranciscoGarciaGuzman/Automaton/blob/ed0243528e0cf83043770d7ff63b26b2e73ca4e9/Automaton.png)
+![Automaton](https://github.com/AngelFranciscoGarciaGuzman/Automaton/blob/ed0243528e0cf83043770d7ff63b26b2e73ca4e9/Automaton.png)
 
 This automaton translated into a Regular Expression (R.E) looks like this:
 <strong>(a(bc) ∗ + c(bc) ∗ + b(bc)∗)</strong>
+
+## Implementation
+Before proceeding to translate our automaton into a Prolog file, we need to define the relations between the states. 
+These relations will represent the transitions from one state to another based on the input symbols. 
+We'll express these relations in a format that Prolog can understand, ensuring they are easily testable and modifiable.
+
+<strong>transition(initial_state,letter,next_state)</strong>
+
+So in the initial state of "q0" if we ingress the letter "a" we'll jump directly to the state "q8", in prolog it would look like this:
+
+<strong>transition(q0,a,q8).</strong>
+
+After coding all of the transitions of the automaton, we need to mark prolog wich states are accepted, for this we will create a function called final_state in which we stablish that, if it is on that state, it will be true, otherwise it will be false.
+
+final_state(q9).
+final_state(q10).
+final_state(q11).
+final_state(q12).
+final_state(q14).
+final_state(q15).
+
+Now we create a function called "automatonCheck" establishing the Base case: If the list is empty, check if the initial state is the final state.
+If it matches any of the final states it will be true, otherwise it will be false.
+
+<strong>automatonCheck([], InitialState) :-
+    final_state(InitialState).</strong>
+
+This function of "automatonCheck" recursively evaluates transitions in the automaton based on input symbols, ensuring adherence to the defined language rules.
+
+<strong>automatonCheck([Symbol | RestofList], InitialState) :-
+    transition(InitialState, Symbol, NextState),
+    automatonCheck(RestofList, NextState).</strong>
+
+We begin by transitioning to the next state according to the current symbol, then we verify if we have reached the end of the input string while also being in a final state; 
+if not, we continue the process by recursively checking the automaton with the next state and symbol, repeating until we reach state "q7" as the final state.
+
+And at the end we will use the function "recover_automaton" in order to write an input that it will be the combination of "abc" as a list and initiate the process on the initial "q0" state
+
+<strong>recover_automaton(ListToBeChecked) :-
+    automatonCheck(ListToBeChecked, q0).</strong>
+
+The complexity of this system is O(n) because our process of traversing the input list involves iterating through each of the n letters in the list exactly once. 
+This linear complexity arises because as the size of the input list increases, the time taken to process it increases proportionally. 
+
+## Testing
+
