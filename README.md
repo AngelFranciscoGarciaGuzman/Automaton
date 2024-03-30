@@ -19,5 +19,7 @@ Considering that our language is:
 Σ = a,b,c
 we will implement the automaton using "q" states, the result implemented in a diagram looks like this:
 
+![Automata](https://github.com/AngelFranciscoGarciaGuzman/Automaton/blob/ed0243528e0cf83043770d7ff63b26b2e73ca4e9/Automaton.png)
+
 This automaton translated into a Regular Expression (R.E) looks like this:
 <strong>(a(bc) ∗ + c(bc) ∗ + b(bc)∗)</strong>
