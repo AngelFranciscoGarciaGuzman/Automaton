@@ -35,7 +35,7 @@ So in the initial state of "q0" if we ingress the letter "a" we'll jump directly
 
 <strong>transition(q0,a,q8).</strong>
 
-After coding all of the transitions of the automaton, we need to mark prolog wich states are accepted, for this we will create a function called final_state in which we stablish that, if it is on that state, it will be true, otherwise it will be false.
+After coding all of the transitions of the automaton, we need to mark and define prolog wich states are accepted, for this we will create a function called final_state in which we establish that, if it is on that state, it will be true, otherwise it will be false.
 
 final_state(q9).
 final_state(q10).
