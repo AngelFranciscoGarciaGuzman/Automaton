@@ -22,7 +22,7 @@ we will implement the automaton using "q" states, the result implemented in a di
 ![Automaton](https://github.com/AngelFranciscoGarciaGuzman/Automaton/blob/e1af6bc7b0168a4c09087088e8ba6a61c776ae58/Automaton%20.png)
 
 This automaton translated into a Regular Expression (R.E) looks like this:
-<strong>(a(bc) ∗ + c(bc) ∗ + b(bc)∗)</strong>
+<strong> (a|b(?!bb)|(c(?!caa)) * ab (ab(a|b(?!bb)|c(?!caa))) </strong>
 
 ## Implementation
 Before proceeding to translate our automaton into a Prolog file, we need to define the relations between the states. 
@@ -112,3 +112,11 @@ recover_automaton([c,c,a,b,c,a]).
 ```
 recover_automaton([a,b,c,c,a,c,b,a]).
 ```
+
+## References
+
+Free Learning Plataform. (s.f.) Theory of automata. Recovered from: https://www.javatpoint.com/theory-of-automata
+
+Roberts, E. (2004-2005). Basics of automata theory. Retrieved from https://cs.stanford.edu/people/eroberts/courses/soco/projects/2004-05/automata-theory/basics.html
+
+
