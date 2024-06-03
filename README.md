@@ -30,11 +30,11 @@ These relations will represent the transitions from one state to another based o
 We'll express these relations in a format that Prolog can understand, ensuring they are easily testable and modifiable.
 
 ```
-<strong>transition(initial_state,letter,next_state)</strong>
+transition(initial_state,letter,next_state)
 ```
 So in the initial state of "q0" if we ingress the letter "a" we'll jump directly to the state "q8", in prolog it would look like this:
 ```
-<strong>transition(q0,a,q8).</strong>
+transition(q0,a,q8).
 ```
 After coding all of the transitions of the automaton, we need to mark and define prolog wich states are accepted, for this we will create a function called final_state in which we establish that, if it is on that state, it will be true, otherwise it will be false.
 
