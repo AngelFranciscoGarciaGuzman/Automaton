@@ -103,10 +103,8 @@ All of these cases must be true:
 
 True because it doesn't have any 'bbb' or 'ccaa' sequence and the 'ab' sequence is present
 ```
-recover_automaton([a,b,a,c,c,a,b,b,a,b,c,c,a,c,b,a]).
+recover_automaton([c,c,a,c,b,a,b,b,c,a,b]).
 ```
-
-
 ```
 recover_automaton([a,a,b,c,b,b,a,b,b]).
 ```
