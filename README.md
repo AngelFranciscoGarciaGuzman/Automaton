@@ -79,7 +79,7 @@ This linear complexity arises because as the size of the input list increases, t
 
 You can download the file <strong>automaton.pl</strong> and try these inputs in the shell of prolog. 
 
-<strong>All of these cases must be false:</strong>
+###<strong>All of these cases must be false:</strong>
 
 False because it contains a sequence of 'bbb'
 ```
@@ -98,7 +98,7 @@ False because it contains a sequence of 'bbb'
 recover_automaton([a,a,b,c,b,b,a,b,b,b]).
 ```
 
-<strong>All of these cases must be true:</strong>
+###<strong>All of these cases must be true:</strong>
 
 
 True because it doesn't have any 'bbb' or 'ccaa' sequence and the 'ab' sequence is present
