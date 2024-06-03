@@ -50,16 +50,16 @@ Now we create a function called "automatonCheck" establishing the Base case: If 
 If it matches any of the final states it will be true, otherwise it will be false.
 
 ```
-<strong>automatonCheck([], InitialState) :-
-    final_state(InitialState).</strong>
+automatonCheck([], InitialState) :-
+    final_state(InitialState).
 ```
 
 This function of "automatonCheck" recursively evaluates transitions in the automaton based on input symbols, ensuring adherence to the defined language rules.
 
 ```
-<strong>automatonCheck([Symbol | RestofList], InitialState) :-
+automatonCheck([Symbol | RestofList], InitialState) :-
     transition(InitialState, Symbol, NextState),
-    automatonCheck(RestofList, NextState).</strong>
+    automatonCheck(RestofList, NextState).
 ```
 
 We begin by transitioning to the next state according to the current symbol, then we verify if we have reached the end of the input string while also being in a final state; 
@@ -68,8 +68,8 @@ if not, we continue the process by recursively checking the automaton with the n
 And at the end we will use the function "recover_automaton" in order to write an input that it will be the combination of "abc" as a list and initiate the process on the initial "q0" state
 
 ```
-<strong>recover_automaton(ListToBeChecked) :-
-    automatonCheck(ListToBeChecked, q0).</strong>
+recover_automaton(ListToBeChecked) :-
+    automatonCheck(ListToBeChecked, q0).
 ```
 
 The complexity of this system is O(n) because our process of traversing the input list involves iterating through each of the n letters in the list exactly once. 
