@@ -77,4 +77,24 @@ This linear complexity arises because as the size of the input list increases, t
 
 ## Testing
 
-You can find the study and testing of this automaton in the file <strong>automaton_test.pl</strong> found in this repository.
+You can download the file <strong>automaton.pl</strong> and try these inputs in the shell of prolog. 
+
+All of these cases must be false:
+
+```
+recover_automaton([a,b,b,b]).
+
+recover_automaton([b,a,b,b,c,a,c,c,a,a]).
+
+recover_automaton([c,a,b,c,c,a,a]).
+
+```
+
+All of these cases must be true:
+
+```
+recover_automaton([a,b,a,c,c,a,b,b,a,b,c,c,a,c,b,a]).
+
+recover_automaton([a,a,b,c,b,b,a,b,b,b]).
+
+```
