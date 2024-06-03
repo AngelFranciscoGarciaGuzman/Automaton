@@ -81,20 +81,32 @@ You can download the file <strong>automaton.pl</strong> and try these inputs in 
 
 All of these cases must be false:
 
+False because it contains a sequence of 'bbb'
 ```
 recover_automaton([a,b,b,b]).
-
+```
+False because it contains a sequence of 'ccaa'
+```
 recover_automaton([b,a,b,b,c,a,c,c,a,a]).
-
+```
+False because it contains a sequence of 'ccaa'
+```
 recover_automaton([c,a,b,c,c,a,a]).
-
+```
+False because it contains a sequence of 'bbb'
+```
+recover_automaton([a,a,b,c,b,b,a,b,b,b]).
 ```
 
 All of these cases must be true:
 
+
+True because it doesn't have any 'bbb' or 'ccaa' sequence and the 'ab' sequence is present
 ```
 recover_automaton([a,b,a,c,c,a,b,b,a,b,c,c,a,c,b,a]).
+```
 
-recover_automaton([a,a,b,c,b,b,a,b,b,b]).
 
+```
+recover_automaton([a,a,b,c,b,b,a,b,b]).
 ```
