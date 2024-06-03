@@ -106,5 +106,8 @@ True because it doesn't have any 'bbb' or 'ccaa' sequence and the 'ab' sequence 
 recover_automaton([c,c,a,c,b,a,b,b,c,a,b]).
 ```
 ```
-recover_automaton([a,a,b,c,b,b,a,b,b]).
+recover_automaton([c,c,a,b,c,a]).
+```
+```
+recover_automaton([a,b,c,c,a,c,b,a]).
 ```
