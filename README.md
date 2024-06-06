@@ -22,7 +22,7 @@ we will implement the automaton using "q" states, the result implemented in a di
 ![Automaton](https://github.com/AngelFranciscoGarciaGuzman/Automaton/blob/e1af6bc7b0168a4c09087088e8ba6a61c776ae58/Automaton%20.png)
 
 This automaton translated into a Regular Expression (R.E) looks like this:
-<strong> (a|b(?!bb)|(c(?!caa)) * ab (ab(a|b(?!bb)|c(?!caa))) </strong>
+<strong> (a|b(?!bb)|(c(?!caa))) * ab (a|b(?!bb)|c(?!caa)) </strong>
 
 ## Implementation
 Before proceeding to translate our automaton into a Prolog file, we need to define the relations between the states. 
